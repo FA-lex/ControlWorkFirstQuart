@@ -1,23 +1,23 @@
 ﻿
-string[] findMaxThreeChar(string[] arrayMaxThreeChar)
+string[] findMaxThreeChar(string[] array)
 {
-    string s = string.Empty;
     int count = 0;
-    for(int i =0; i < arrayMaxThreeChar.Length; i++)
+    for(int i =0; i < array.Length; i++)
     {
-        if(arrayMaxThreeChar[i].Length < 4)
+        if(array[i].Length < 4) count++;
+    }
+
+    string[] rezult = new string[count];
+    count = 0;
+    for(int i =0; i < array.Length; i++)
+    {
+        if(array[i].Length < 4)
         {
-            if(count == 0)
-            {
-                s = arrayMaxThreeChar[i];
-                count++;
-            }
-            else s = $"{s},{arrayMaxThreeChar[i]}";  
+            rezult[count] = array[i];
+            count++;
         }
     }
-    string[] rezult = s.Split(",")
-                       .Select(e=>(e))
-                       .ToArray();
+
     return rezult;
 }
 
@@ -27,6 +27,11 @@ void PrintArray(string[] array)
         Console.Write($"\"{array[i]}\" ");
     Console.WriteLine();
 }
+
+
+
+
+
 
 string[] inputDate;
 int selectInput = 0;
@@ -49,7 +54,7 @@ if(selectInput == 1)
 }
 else
 {
-    inputDate = new string[]{"j", "ndh", "kfi)", "dhyrj", "jjj"};
+    inputDate = new string[]{"I", "need", "very", "well", "assessment", ":-)", "it", "is", "fun"};
 }
 
 Console.WriteLine("===========");
